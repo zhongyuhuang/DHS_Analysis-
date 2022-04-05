@@ -1,17 +1,21 @@
 # We will convert the information from the “Median age at first birth” table on
 # page 44 of the Philippines DHS final report in 1998.
 
-# what is needed is a table with a column for current age, residence, region, 
+# what is needed is a table with rows indicate, residence, region, 
 # education, and median age of first birth. 
 
+---------------------------------------------------------
+Residence | 25-29  | 30-34 | 35-39 | 40-44 | 45-49| 25-49
 --------------------------------------------------------
-current_age | residence | region | education | median_age
+urban     | ""     | ""    | ""    | ""    |   "" | ""  
 --------------------------------------------------------
-25-29       | urban     | Ilocos | "no education" | 24.5
+""        |  ""    | ""    |   ""  |  ""   | ""   |""
 --------------------------------------------------------
-   ""       |  ""       | ""     |   ""          |  ""  
+Region    |   ""   |   ""  |  ""   |   ""  |  ""  | ""
 --------------------------------------------------------
-   ""      |   ""      |   ""    |  ""           |   ""     
+  ""      |  ""    | ""    |   ""  |  ""   |""    |
+--------------------------------------------------------
+Education |  ""    | ""    |   ""  |  ""   | ""   |
 --------------------------------------------------------
   .             
   .
