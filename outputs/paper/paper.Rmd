@@ -1,12 +1,10 @@
 ---
-title: "My title"
-subtitle: "My subtitle if needed"
+title: "Education and region effects on Philippines teenage fertility in 1998"
 author: 
-  - First author
-  - Another author
-thanks: "Code and data are available at: LINK."
-date: "`r format(Sys.time(), '%d %B %Y')`"
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+  - Zhongyu Huang
+thanks: "Code and data are available at: https://github.com/zhongyuhuang/DHS_Analysis-.git"
+date: "April 6, 2022"
+abstract: "Teenage fertilities induce health risks and life impacts on both young mothers and their children. Philippines, one of the countries that have the highest adolescent birth rates, the teenage pregnancy toll is still rising here. This paper uses data collected by the National demographic and health survey in 1998 to investigate how background characteristics affect the teenage fertility rates in the Philippines. Evidence has shown that most teenage mothers received less education and lived in rural areas."
 output:
   bookdown::pdf_document2
 toc: FALSE
@@ -14,10 +12,18 @@ bibliography: references.bib
 ---
 
 ```{r setup, include=FALSE}
+# setup workspace
 knitr::opts_chunk$set(echo = TRUE)
 
 library(tidyverse)
-library(palmerpenguins)
+library(ggplot2)
+library(gridExtra)
+```
+
+```{r load, include=FALSE}
+# load data
+f <- file.choose()
+dhs1998 <- read.csv(f)
 ```
 
 # Introduction
@@ -30,31 +36,66 @@ You can and should cross-reference sections and sub-sections. For instance, Sect
 
 Our data is of penguins (Figure \@ref(fig:bills)).
 
-```{r bills, fig.cap="Bills of penguins", echo = FALSE}
-ggplot(penguins, aes(x = island, fill = species)) +
-  geom_bar(alpha = 0.8) +
-  scale_fill_manual(values = c("darkorange","purple","cyan4"),
-                    guide = FALSE) +
-  theme_minimal() +
-  facet_wrap(~species, ncol = 1) +
-  coord_flip()
+
+```{r bills, fig.cap="Percentage of teenage pregnancy and motherhood by residence", echo = FALSE, fig.height=9, fig.width=5}
+#subset the dataset by rows containing residence
+Residence<- dhs1998[8:9,]
+
+# plot Percentage of who are mothers
+p1 <- ggplot(Residence, aes(BG_inf, PT_Mom)) + xlab("Residence") +ylab("Percentage of who are mothers")+geom_col()
+
+# plot Percentage of who have begun child-bearing
+p2 <- ggplot(Residence, aes(BG_inf, PT_bear)) + xlab("Residence") +ylab("Percentage of who have begun child-bearing")+geom_col()
+
+# plot Percentage of who are pregnant with first child
+p3 <- ggplot(Residence, aes(BG_inf, PT_Pgt)) + xlab("Residence") +ylab("Percentage of who are pregnant with first child")+geom_col()
+
+# arrange plots
+grid.arrange(p1,p2,p3)
+
 ```
 
-Talk more about it.
+Our data is of penguins (Figure \@ref(fig:bills2)).
 
-Also bills and their average (Figure \@ref(fig:billssssss)). (Notice how you can change the height and width so they don't take the whole page?)
+```{r bills2, fig.cap="Percentage of teenage pregnancy and motherhood by region", echo = FALSE, fig.height=9, fig.width=5}
+#subset the dataset by rows containing age
+Region <- dhs1998[11:26,]
 
-```{r billssssss, fig.cap="More bills of penguins", echo = FALSE, fig.width=8, fig.height=4}
+# plot Percentage of who are mothers
+c1 <- ggplot(Region, aes(BG_inf, PT_Mom)) + xlab("Region") +ylab("Percentage of who are mothers")+ geom_col()+coord_flip()
 
-# This needs to be about the random data tha tI sasmpled?
-ggplot(penguins, aes(x = island, fill = species)) +
-  geom_bar(alpha = 0.8) +
-  scale_fill_manual(values = c("darkorange","purple","cyan4"),
-                    guide = FALSE) +
-  theme_minimal() +
-  facet_wrap(~species, ncol = 1) +
-  coord_flip()
+# plot Percentage of who have begun child-bearing
+c2 <- ggplot(Region, aes(BG_inf, PT_bear)) + xlab("Region") +ylab("Percentage of who have begun child-bearing")+ geom_col()+coord_flip()
+
+# plot Percentage of who are pregnant with first child
+c3 <- ggplot(Region, aes(BG_inf, PT_Pgt)) + xlab("Region") +ylab("Percentage of who are pregnant with first child")+ geom_col() +coord_flip()
+
+# arrange plots
+grid.arrange(c1,c2,c3)
 ```
+
+```{r bills3, fig.cap="Percentage of teenage pregnancy and motherhood by education level", echo = FALSE, fig.height=9, fig.width=5}
+#subset the dataset by rows containing age
+Education<- dhs1998[28:31,]
+
+# plot Percentage of who are mothers
+p1 <- ggplot(Education, aes(BG_inf, PT_Mom))+ xlab("Education Level") +ylab("Percentage of who are mothers") + geom_col()
+
+# plot Percentage of who have begun child-bearing
+p2 <- ggplot(Education, aes(BG_inf, PT_bear))+ xlab("Education Level") +ylab("Percentage of who have begun child-bearing") +geom_col()
+
+# plot Percentage of who are pregnant with first child
+p3 <- ggplot(Education, aes(BG_inf, PT_Pgt)) + xlab("Education Level") +ylab("Percentage of who are pregnant with first child") +
+  geom_col()
+
+# arrange plots
+grid.arrange(p1,p2,p3)
+
+```
+
+
+
+
 
 Talk way more about it. 
 
