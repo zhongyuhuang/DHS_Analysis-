@@ -28,6 +28,8 @@ dhs1998 <- read.csv(f)
 
 # Introduction
 
+  According to the World Health Organization, an estimated 12 million girls aged 15–19 years give birth every year in developing countries. There are at least 777,000 girls aged under 15 years becoming pregnant yearly. Young individuals are expected to give birth after they successfully step into adulthood since early fertility leads to social and health-related impacts. It is not hard to image the difficulties that young mothers would face as they are economic dependent. Moreover, in current society, pregnant teenagers are disadvantaged. Researches have shown that it is more likely for them to experience violence within partnerships. 
+
 You can and should cross-reference sections and sub-sections. For instance, Section \@ref(data). R Markdown automatically makes the sections lower case and adds a dash to spaces to generate labels, for instance, Section \@ref(first-discussion-point). 
 
 
