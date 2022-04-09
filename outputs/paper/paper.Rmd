@@ -18,6 +18,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(ggplot2)
 library(gridExtra)
+library(knitr)
 ```
 
 ```{r load, include=FALSE}
@@ -36,11 +37,42 @@ dhs1998 <- read.csv(f)
   
   Results indicate that the percentage of women who are mothers increased greatly from 0.3 for the 15-years-old girls to 17 for those who were 19. Differences in residence, region, and education level lead to quite different rates. In the Philippines, rural regions of Western Mindanao, Eastern Visayas, and Cagayan Valley had the highest proportions of early fertility. The level of education had a significant effect on this rate as well. Individuals who received more education understand more of the impact caused by early fertility. Thus, we could conclude that providing more access to education would be an efficient way to reduce teenage fertility.
   
+  
   The rest of the paper would be: Section "Data": introduce the survey and data. Section "Results": graphical presentation of results. Section "Discussions": discussions on what we find. Section "Weaknesses and next steps": talk about limitations involved in our analysis.
 
 
 
 # Data
+
+  Our data is collected by the Philippines National Demographic and Health Survey (DHS) in 1998. The DHS surveyed 13,983 women aged 15-49 nationwide by using questionnaires and interviews. It was designed to analyze potential trends in fertility, children's health, and family planning knowledge and use. We focus on the Teenage pregnancy and motherhood table on page 45 and phase it to a data frame from a pdf file.(Figure \@ref(fig:bills4)) The table summarized the percentage of teenage mothers with different background information from 2924 teenagers. Mainly with these four characteristics: Age, Residence, Region, and Education. More detailed information about the dataset can be find in the Appendix.
+
+I created five variables: BG_inf stores the background information of teenagers, PT_Mom stores the percentage who are mothers, PT_Prg stores the percentage who are pregnant with their first child, PT_bear stores the percentage who have begun child-bearing, and NumOfTeen stores the total number of teenagers in that category. Non-surprisingly, the rate of teenage pregnancy increased linearly with age(Figure \@ref(fig:bills5)). The percentages of teenagers who are mothers or pregnant in the different backgrounds are linked in some ways. We see that regions had high rates are more likely less urbanized and with less access to education.
+  
+```{r bills4, echo=FALSE, out.width = '100%',fig.align='center', fig.cap="The original table in DHS final report"}
+include_graphics(here::here("inputs/data/table.jpg"))
+```
+
+```{r bills5, fig.cap="Percentage of teenage pregnancy and motherhood by age", echo = FALSE, fig.height=9, fig.width=5}
+#subset the dataset by rows containing residence
+Age<- dhs1998[2:6,]
+
+# plot Percentage of who are mothers
+a1 <- ggplot(Age, aes(BG_inf, PT_Mom)) + xlab("Age") +ylab("Percentage of who are mothers")+geom_col()
+
+# plot Percentage of who have begun child-bearing
+a2 <- ggplot(Age, aes(BG_inf, PT_bear)) + xlab("Age") +ylab("Percentage of who have begun child-bearing")+geom_col()
+
+# plot Percentage of who are pregnant with first child
+a3 <- ggplot(Age, aes(BG_inf, PT_Pgt)) + xlab("Age") +ylab("Percentage of who are pregnant with first child")+geom_col()
+
+# arrange plots
+grid.arrange(a1,a2,a3)
+
+```
+
+
+
+# Results
 
 Our data is of penguins (Figure \@ref(fig:bills)).
 
@@ -104,25 +136,6 @@ grid.arrange(p1,p2,p3)
 
 
 
-
-Talk way more about it. 
-
-
-
-# Model
-
-\begin{equation}
-Pr(\theta | y) = \frac{Pr(y | \theta) Pr(\theta)}{Pr(y)}  (\#eq:bayes)
-\end{equation}
-
-Equation \@ref(eq:bayes) seems useful, eh?
-
-Here's a dumb example of how to use some references: In paper we run our analysis in `R` [@citeR]. We also use the `tidyverse` which was written by @thereferencecanbewhatever If we were interested in baseball data then @citeLahman could be useful. 
-
-We can use maths by including latex between dollar signs, for instance $\theta$.
-
-
-# Results
 
 # Discussion
 
