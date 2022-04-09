@@ -28,9 +28,15 @@ dhs1998 <- read.csv(f)
 
 # Introduction
 
-  According to the World Health Organization, an estimated 12 million girls aged 15–19 years give birth every year in developing countries. There are at least 777,000 girls aged under 15 years becoming pregnant yearly. Young individuals are expected to give birth after they successfully step into adulthood since early fertility leads to social and health-related impacts. It is not hard to image the difficulties that young mothers would face as they are economic dependent. Moreover, in current society, pregnant teenagers are disadvantaged. Researches have shown that it is more likely for them to experience violence within partnerships. 
-
-You can and should cross-reference sections and sub-sections. For instance, Section \@ref(data). R Markdown automatically makes the sections lower case and adds a dash to spaces to generate labels, for instance, Section \@ref(first-discussion-point). 
+  According to the World Health Organization, an estimated 12 million girls aged 15–19 years give birth every year in developing countries. There are at least 777,000 girls aged under 15 years becoming pregnant yearly. Young individuals are expected to give birth after they successfully step into adulthood since early fertility leads to social and health-related impacts. It is not hard to imagine the difficulties that young mothers would face as they are economically dependent. Moreover, in current society, pregnant teenagers are disadvantaged. Research has shown that it is more likely for them to experience violence within partnerships. Other than that, early fertility contributes to health risks such as hypertension, low birth weight, and a high probability of spontaneous abortion. Thus, it is necessary and important to find ways to reduce teenage fertility.
+  
+  
+  This paper uses data collected by the National Demographic and Health Survey to seek patterns in the background information of teenage mothers from the Philippines in 1998. Data related to fertility, child health, and family planning were reported in the DHS final report. We will use R[@citeR] to phase the Table 3.10 Teenage pregnancy and motherhood on page 45 of the pdf file to a useable data frame. By using appropriate graphs, we will analyze the relationships between teenage fertility and region, education level, and residence respectively.
+  
+  
+  Results indicate that the percentage of women who are mothers increased greatly from 0.3 for the 15-years-old girls to 17 for those who were 19. Differences in residence, region, and education level lead to quite different rates. In the Philippines, rural regions of Western Mindanao, Eastern Visayas, and Cagayan Valley had the highest proportions of early fertility. The level of education had a significant effect on this rate as well. Individuals who received more education understand more of the impact caused by early fertility. Thus, we could conclude that providing more access to education would be an efficient way to reduce teenage fertility.
+  
+  The rest of the paper would be: Section "Data": introduce the survey and data. Section "Results": graphical presentation of results. Section "Discussions": discussions on what we find. Section "Weaknesses and next steps": talk about limitations involved in our analysis.
 
 
 
