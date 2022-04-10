@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.6)  9 APR 2022 09:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.4.6)  10 APR 2022 05:34
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -490,7 +490,8 @@ Package pdftex.def Info: paper_files/figure-latex/bills5-1.pdf  used on input li
 
 LaTeX Warning: Float too large for page by 23.94283pt on input line 140.
 
-<paper_files/figure-latex/bills-1.pdf, id=70, 361.35pt x 650.43pt>
+[2 <c:/Users/Zoey/Desktop/DHS_Analysis/DHS_Analysis-/inputs/data/table.jpg>] [3 <./paper_files/figure-latex/bills5-1.pdf>]
+<paper_files/figure-latex/bills-1.pdf, id=88, 361.35pt x 650.43pt>
 File: paper_files/figure-latex/bills-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/bills-1.pdf>
 Package pdftex.def Info: paper_files/figure-latex/bills-1.pdf  used on input line 149.
@@ -498,43 +499,47 @@ Package pdftex.def Info: paper_files/figure-latex/bills-1.pdf  used on input lin
 
 LaTeX Warning: Float too large for page by 23.94283pt on input line 151.
 
-[2 <c:/Users/Zoey/Desktop/DHS_Analysis/DHS_Analysis-/inputs/data/table.jpg>] [3 <./paper_files/figure-latex/bills5-1.pdf>]
-<paper_files/figure-latex/bills2-1.pdf, id=88, 361.35pt x 650.43pt>
+<paper_files/figure-latex/bills2-1.pdf, id=89, 361.35pt x 650.43pt>
 File: paper_files/figure-latex/bills2-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/bills2-1.pdf>
-Package pdftex.def Info: paper_files/figure-latex/bills2-1.pdf  used on input line 157.
+Package pdftex.def Info: paper_files/figure-latex/bills2-1.pdf  used on input line 155.
 (pdftex.def)             Requested size: 361.34912pt x 650.4284pt.
 
-LaTeX Warning: Float too large for page by 23.94283pt on input line 159.
+LaTeX Warning: Float too large for page by 23.94283pt on input line 157.
 
-<paper_files/figure-latex/bills3-1.pdf, id=89, 361.35pt x 650.43pt>
+<paper_files/figure-latex/bills3-1.pdf, id=90, 361.35pt x 650.43pt>
 File: paper_files/figure-latex/bills3-1.pdf Graphic file (type pdf)
 <use paper_files/figure-latex/bills3-1.pdf>
-Package pdftex.def Info: paper_files/figure-latex/bills3-1.pdf  used on input line 163.
+Package pdftex.def Info: paper_files/figure-latex/bills3-1.pdf  used on input line 161.
 (pdftex.def)             Requested size: 361.34912pt x 650.4284pt.
 
-LaTeX Warning: Float too large for page by 23.94283pt on input line 165.
+LaTeX Warning: Float too large for page by 23.94283pt on input line 163.
 
-[4] [5 <./paper_files/figure-latex/bills-1.pdf>] [6 <./paper_files/figure-latex/bills2-1.pdf>] [7 <./paper_files/figure-latex/bills3-1.pdf>] [8]
+[4] [5 <./paper_files/figure-latex/bills-1.pdf>] [6 <./paper_files/figure-latex/bills2-1.pdf>] [7 <./paper_files/figure-latex/bills3-1.pdf>] [8] [9]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 206.
-[9] (./paper.aux)
+(Font)              <7> on input line 429.
+
+Underfull \hbox (badness 1472) in paragraph at lines 429--430
+[]\T1/lmr/m/n/10 I col-lected the data from []$https : / / dhsprogram . com / publications / publication -[] fr103 -[] dhs -[] ^^\nal -[]
+ []
+
+[10] [11] [12] [13] [14] (./paper.aux)
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: 5A53DE9DCF35611C2BFA2DBCC900BD5D;1369.
+(rerunfilecheck)             Checksum: 58C5084218EF52E00C2DB733C3C062C6;1172.
  ) 
 Here is how much of TeX's memory you used:
- 11237 strings out of 480228
- 176749 string characters out of 5893579
- 466625 words of memory out of 5000000
- 28956 multiletter control sequences out of 15000+600000
- 532561 words of font info for 77 fonts, out of 8000000 for 9000
+ 11303 strings out of 480228
+ 177152 string characters out of 5893579
+ 468570 words of memory out of 5000000
+ 28959 multiletter control sequences out of 15000+600000
+ 535921 words of font info for 79 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 60i,6n,63p,902b,358s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}<c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb>
-Output written on paper.pdf (9 pages, 325400 bytes).
+ 60i,6n,63p,1231b,474s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}<c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb><c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb><c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb><c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb><c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr6.pfb><c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb><c:/Users/Zoey/AppData/Roaming/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb>
+Output written on paper.pdf (14 pages, 379960 bytes).
 PDF statistics:
- 201 PDF objects out of 1000 (max. 8388607)
- 160 compressed objects within 2 object streams
- 39 named destinations out of 1000 (max. 500000)
+ 303 PDF objects out of 1000 (max. 8388607)
+ 253 compressed objects within 3 object streams
+ 100 named destinations out of 1000 (max. 500000)
  114 words of extra memory for PDF output out of 10000 (max. 10000000)
 
