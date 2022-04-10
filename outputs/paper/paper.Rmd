@@ -29,10 +29,10 @@ dhs1998 <- read.csv(f)
 
 # Introduction
 
-  According to the World Health Organization, an estimated 12 million girls aged 15–19 years give birth every year in developing countries. There are at least 777,000 girls aged under 15 years becoming pregnant yearly. Young individuals are expected to give birth after they successfully step into adulthood since early fertility leads to social and health-related impacts. It is not hard to imagine the difficulties that young mothers would face as they are economically dependent. Moreover, in current society, pregnant teenagers are disadvantaged. Research has shown that it is more likely for them to experience violence within partnerships. Other than that, early fertility contributes to health risks such as hypertension, low birth weight, and a high probability of spontaneous abortion. Thus, it is necessary and important to find ways to reduce teenage fertility.
+  According to the World Health Organization, an estimated 12 million girls aged 15–19 years give birth every year in developing countries[@WHO]. There are at least 777,000 girls aged under 15 years becoming pregnant yearly[@WHO]. Young individuals are expected to give birth after they successfully step into adulthood since early fertility leads to social and health-related impacts. It is not hard to imagine the difficulties that young mothers would face as they are economically dependent. Moreover, in current society, pregnant teenagers are disadvantaged. Research has shown that it is more likely for them to experience violence within partnerships[@teen]. Other than that, early fertility contributes to health risks such as hypertension, low birth weight, and a high probability of spontaneous abortion[@WHO]. Thus, it is necessary and important to find ways to reduce teenage fertility.
   
   
-  This paper uses data collected by the National Demographic and Health Survey to seek patterns in the background information of teenage mothers from the Philippines in 1998. Data related to fertility, child health, and family planning were reported in the DHS final report. We will use R[@citeR] to phase the Table 3.10 Teenage pregnancy and motherhood on page 45 of the pdf file to a useable data frame. By using appropriate graphs, we will analyze the relationships between teenage fertility and region, education level, and residence respectively.
+  This paper uses data collected by the National Demographic and Health Survey to seek patterns in the background information of teenage mothers from the Philippines in 1998[@DHS]. Data related to fertility, child health, and family planning were reported in the DHS final report[@DHS]. We will use R[@citeR] to phase the Table 3.10 Teenage pregnancy and motherhood on page 45 of the pdf file to a useable data frame. By using appropriate graphs, we will analyze the relationships between teenage fertility and region, education level, and residence respectively.
   
   
   Results indicate that the percentage of women who are mothers increased greatly from 0.3 for the 15-years-old girls to 17 for those who were 19. Differences in residence, region, and education level lead to quite different rates. In the Philippines, rural regions of Western Mindanao, Eastern Visayas, and Cagayan Valley had the highest proportions of early fertility. The level of education had a significant effect on this rate as well. Individuals who received more education understand more of the impact caused by early fertility. Thus, we could conclude that providing more access to education would be an efficient way to reduce teenage fertility.
@@ -44,7 +44,7 @@ dhs1998 <- read.csv(f)
 
 # Data
 
-  Our data is collected by the Philippines National Demographic and Health Survey (DHS) in 1998. The DHS surveyed 13,983 women aged 15-49 nationwide by using questionnaires and interviews. It was designed to analyze potential trends in fertility, children's health, and family planning knowledge and use. We focus on the Teenage pregnancy and motherhood table on page 45 and phase it to a data frame from a pdf file.(Figure \@ref(fig:bills4)) The table summarized the percentage of teenage mothers with different background information from 2924 teenagers. Mainly with these four characteristics: Age, Residence, Region, and Education. More detailed information about the dataset can be find in the Appendix.
+  Our data is collected by the Philippines National Demographic and Health Survey (DHS) in 1998. The DHS surveyed 13,983 women aged 15-49 nationwide by using questionnaires and interviews[@DHS]. It was designed to analyze potential trends in fertility, children's health, and family planning knowledge and use[@DHS]. We focus on the Teenage pregnancy and motherhood table on page 45 and phase it to a data frame from a pdf file.(Figure \@ref(fig:bills4)) The table summarized the percentage of teenage mothers with different background information from 2924 teenagers[@DHS]. Mainly with these four characteristics: Age, Residence, Region, and Education. More detailed information about the dataset can be find in the Appendix A.
 
 I created five variables: BG_inf stores the background information of teenagers, PT_Mom stores the percentage who are mothers, PT_Prg stores the percentage who are pregnant with their first child, PT_bear stores the percentage who have begun child-bearing, and NumOfTeen stores the total number of teenagers in that category. Non-surprisingly, the rate of teenage pregnancy increased linearly with age(Figure \@ref(fig:bills5)). The percentages of teenagers who are mothers or pregnant in the different backgrounds are linked in some ways. We see that regions had high rates are more likely less urbanized and with less access to education.
   
@@ -74,20 +74,21 @@ grid.arrange(a1,a2,a3)
 # Results
 
 
-  Although teenage mothers only take up a small proportion of teenagers in the Philippines, we can see a significant difference between the backgrounds of these individuals. As for the residence type, proportions of rural teenage fertility are almost twice larger than those in urban residences(Figure \@ref(fig:bills)). Most of them had already begun child-bearing(10.8%). Individuals aged from 15 to 19 are supposed to attend at least high school. However, we find out that most of them received no education(34.6%) or only finished elementary school(31.8%)(Figure \@ref(fig:bills2)). We also observed a large increase in the proportion who are mothers from 3% among teens who attended college or higher to 17% among those with no education. By comparing teenage fertility by regions, we can see western Mindanao, ARMM, and the eastern Visayas are regions that share the highest proportions of teenage mothers(Figure \@ref(fig:bills2)). Consistent with the rural-urban differences, these three regions are less urbanized compared to others. Non-surprisingly, Metro Manila, the national capital region who are urbanized and with more access to education, corresponds to the lowest teenage fertility. 
+  Although teenage mothers only take up a small proportion of teenagers in the Philippines, we can see a significant difference between the backgrounds of these individuals. As for the residence type, proportions of rural teenage fertility are almost twice larger than those in urban residences(Figure \@ref(fig:bills)). Most of them had already begun child-bearing(10.8%). Individuals aged from 15 to 19 are supposed to attend at least high school. However, we find out that most of them received no education(34.6%) or only finished elementary school(31.8%)(Figure \@ref(fig:bills3)). We also observed a large increase in the proportion who are mothers from 3% among teens who attended college or higher to 17% among those with no education. By comparing teenage fertility by regions, we can see western Mindanao, ARMM, and the eastern Visayas are regions that share the highest proportions of teenage mothers(Figure \@ref(fig:bills2)). Consistent with the rural-urban differences, these three regions are less urbanized compared to others. Non-surprisingly, Metro Manila, the national capital region who are urbanized and with more access to education, corresponds to the lowest teenage fertility. 
 
-```{r bills, fig.cap="Percentage of teenage pregnancy and motherhood by residence", echo = FALSE, fig.height=9, fig.width=5}
+
+```{r bills, fig.cap="Percentage of teenage pregnancy and motherhood by residence", echo = FALSE, fig.height=6, fig.width=5}
 #subset the dataset by rows containing residence
 Residence<- dhs1998[8:9,]
 
 # plot Percentage of who are mothers
-p1 <- ggplot(Residence, aes(BG_inf, PT_Mom)) + xlab("Residence") +ylab("Percentage of who are mothers")+geom_col()
+p1 <- ggplot(Residence, aes(BG_inf, PT_Mom)) + xlab("Residence") +ylab("Percentage of who are mothers")+geom_col()+coord_flip()
 
 # plot Percentage of who have begun child-bearing
-p2 <- ggplot(Residence, aes(BG_inf, PT_bear)) + xlab("Residence") +ylab("Percentage of who have begun child-bearing")+geom_col()
+p2 <- ggplot(Residence, aes(BG_inf, PT_bear)) + xlab("Residence") +ylab("Percentage of who have begun child-bearing")+geom_col()+coord_flip()
 
 # plot Percentage of who are pregnant with first child
-p3 <- ggplot(Residence, aes(BG_inf, PT_Pgt)) + xlab("Residence") +ylab("Percentage of who are pregnant with first child")+geom_col()
+p3 <- ggplot(Residence, aes(BG_inf, PT_Pgt)) + xlab("Residence") +ylab("Percentage of who are pregnant with first child")+geom_col()+coord_flip()
 
 # arrange plots
 grid.arrange(p1,p2,p3)
@@ -131,22 +132,21 @@ grid.arrange(p1,p2,p3)
 ```
 
 
-
-
 # Discussion
-
 
 ## Education matters
 
-If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
+  From the pattern discovered above, we can conclude with confidence that the effect of education on teenage fertility is significant. Individuals who have greater access to education could be more knowledgeable on the importance of safe sex. Education in the Philippines is a product of generations of colonialism[@teen1]. Thus, the current education system is still not impeccable and has issues remain. According to the research, there are only about 70% of pupils who enrolled in elementary school and finished the curriculum[@teen1]. This number even decreases to 30% for those enrolled in secondary or higher institutions[@teen1]. Well, where did these children go? Poverty is one of the major issues in the Philippines society. Due to the wide gap between the rich and the poor in the Philippines, children in poor families are forced to work to provide needs for their lives[@teen2]. More concerning, children who attend school have not received a high-quality education. According to research, poor facilities are resulted from that the education system does not receive much budget from the Philippines government[@teen1]. Especially schools in the rural areas only received limited support from the government. Hence, teenage fertility is not a stand-alone issue in the Philippines. It is rather a complex product of multiple issues that exist in society. 
 
-## Religon effects?
 
-## ways 
+## Religion plays a role?
 
-## Weaknesses and next steps
+  When investigating the difference in the proportion of teenage fertility by region, I discovered that the regions with the highest percentages are Eastern Visayas, the autonomous region, and Cagayan Valley. The corresponding religions for the majority of the households are Roman Catholics and Muslims. Would religion play a role in teenage fertility? According to the report conducted in 2004, there was not enough evidence to suggest that Muslim Pronatalism was linked to the lower power of Muslim women[@teen3]. However, they found that compared to Muslim and non-Muslim communities in South Asia, the Muslim community had more children and tend to have more children[@teen3]. As for Roman Catholics communities, around 82% of the population in the Philippines is Roman Catholic[@teen4]. Similar to Muslim communities, the research observed high birth rates of Roman Catholics in developing countries[@teen4]. We can not determine whether religion impacts teenage fertility without further investigation.
+  
+  
+## Conclusion and limitation
 
-Weaknesses and next steps should also be included.
+  It is evident that teenage fertility could be influenced by residence, region, and education level in the Philippines 1998. These differences might reveal deeper factors related to this issue. This analysis is limited to women aged from 15 to 49 years. Moreover, we need more data from years to verify if these differences existed for years and not by chance. The hypothesis that religion might influence teenage fertility is weak without further studies of the histories of each religion. There are indeed more factors that should be taken into consideration to explain teenage fertility in the Philippines or any other country. Potential variables including income, access to abortion, and social custom might also linked to teenage fertility.
 
 \newpage
 
@@ -299,6 +299,6 @@ Survey of Households (ISH) of the NSO.
 
 ---
 nocite: |
-  @citeggplot2, @citepdftools, @citetidyverse, @citepointblank, @citeknitr
+  @citeggplot2, @citepdftools, @citetidyverse, @citepointblank, @citeknitr, @citeddknitr
 ---
 
